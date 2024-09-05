@@ -1,0 +1,423 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"Inter", sans-serif;
+    color: #ffffff;
+    box-sizing: border-box;
+    
+}
+body{
+    height: 100vh;
+    background: rgb(38,7,13);
+    /* background: linear-gradient(90deg, rgba(38,7,13,1) 0%, rgba(124,26,44,1) 56%, rgba(185,24,54,1) 100%); */
+    background: linear-gradient(90deg, black, rgba(124,26,44));
+}
+
+header{
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    position:static;
+    background-color:transparent;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    height: 10vh;
+}
+
+header a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 498;
+    transition: .5s;
+
+}
+header a:hover{
+    font-size: 35px;
+    color: #ff3055;
+    
+}   
+.navbar{
+    border-radius: 50px;
+    padding: 10px;
+    background: #0e0e0e;
+    
+}
+
+.navbar a{
+    font-size: 25px;
+    font-weight: 498;
+    margin: 35px;
+    transition: .5s;
+}
+
+
+.navbar a:hover{
+    color: #ff3055;
+    font-size: 30px;
+    padding: 7.5px;
+}
+.navbar .active{
+    color: #ff3055;
+}
+.navbar .active:hover{
+    color: #ffffff;
+    font-size: 30px;
+    padding: 7.5px;
+}
+
+
+/* Image and Hero Section */
+
+/* .hero{
+    height: 80vh;
+    display: grid;
+    grid-template-columns: (1fr,1fr);
+    grid-template-rows: (1fr 1fr 1fr 1fr 1fr 1fr);
+    padding:0 10%;
+    z-index: -1;
+    align-items: center;
+} */
+/* .image{
+    height: 100%;
+    width: 100%;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    border:2px solid black
+}
+img{
+    
+    height: 600px;
+    width: 550px;
+    border-radius: 50px;
+    /* margin-top: 5%; */
+/* } */
+/* .myself{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-content: center;
+    align-items: center;
+    padding-left: 68px;
+    font-size: 22px;
+    font-weight: 608;
+    
+}
+.myname{
+    color:#c53e48;
+    filter: drop-shadow(10px 10px 2px  black);
+} */
+/* p{
+    max-width:80%;
+} */ 
+
+.hero{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    gap: 68px;
+    padding: 0 10%;
+}
+
+
+
+.img-web{
+    height: 600px;
+    width: 550px;
+    border-radius: 70px;
+    box-shadow: 10px;
+    
+}
+.container{
+    height: 600px;
+    width: 550px;
+    position: relative;
+}
+
+@property --angle{
+    syntax:"<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.container::after, .container::before{
+    
+    content: '';
+    position: absolute;
+    height: 100%;
+    width:100%;
+    /* background-image: conic-gradient(#c53e48 ,#c53e48 ); */
+    /* background-image: conic-gradient(from var(--angle),transparent 50%,#c53e48 ); */
+    background-image: conic-gradient(from var(--angle),#c53e48,#082dffe8,#46f11b,#f10bd3,#c53e48 );
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 70px;
+    animation: 3s spin linear infinite;
+}
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+.container::before{
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+
+/* Applying CSS to the Text Elements */
+
+.myself{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    height: 600px;
+    padding: 2% 0;
+    
+}
+
+
+.myname{
+    font-size: 80px;
+    
+}
+.lett-a{
+    font-size: 40px;
+    padding-right:20px ;
+}
+.web-dev{
+    font-size: 90px;
+    /* color: #ff3055; */
+    background: linear-gradient(90deg,#ff3055,#ffffff);
+    background-clip: text;
+    color:transparent;
+
+}
+
+p{
+    letter-spacing: 2px;
+}
+
+/* .connect{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+}
+#email{
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    background: #ffffff;
+    color: black;
+} */
+
+/* trying to make a bus network(tree) with educations details */
+
+
+/* .education-tree{
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10%;
+    width: 100%;
+    
+
+}
+.education-tree a{
+    text-decoration: none;
+    height: 2rem;
+    font-size: 25px;
+    text-align: center;
+}
+.hallow{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+}
+
+.bsc-it{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: relative;
+}
+
+.hsc{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+.ssc{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+.hallow-fill{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+hr{
+    transform:rotate(90deg);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+} */
+
+/* 
+Education Section Style */
+
+.education-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    height: 100vh;
+    
+}
+.heading{
+    padding: 1.5rem;
+    font-size: 70px;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    
+}
+
+.Edu-container{
+    display: flex;
+    height: 80%;
+    padding-bottom: 8%;
+    gap: 60px;
+    justify-content: center;
+    
+}
+
+.card{
+    
+    height: 100%;
+    justify-content: center;
+    width: 430px;
+}
+.card-container-1 ,.card-container-2 , .card-container-3{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+
+
+.card:hover >.card-container-1 , .card:hover >.card-container-2 ,.card:hover >.card-container-3{
+    transform: rotateY(-180deg);
+}
+
+
+
+.cards-front, .cards-back{
+    height: 100%;
+    width: 100%;
+    border-radius: 60px;
+    padding: 5% 5%;
+    width: 430px;
+    transition: transform 1.5s;
+    position: absolute;
+    backface-visibility: hidden;
+   
+}
+
+.cards-back{
+    
+    transform: rotateY(180deg);
+}
+
+
+
+/* .cards-front:hover{
+    transform: rotateY(-180deg);
+} */
+
+.year-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    font-size: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    display: flex;
+/* 
+    code for flipping it back and forth */
+
+}
+.calendar{
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+.year{
+    font-size: 1.8rem;
+    /* margin-right: 4.5rem; */
+    grid-area: 1 / 2 / 2 / 4;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    
+}
+
+.course{
+    height: 90%;
+    grid-area: 2 / 1 / 6 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#card-1{
+    background: linear-gradient(90deg, #030609 , #30a8ff);
+}
+#card-2{
+    background: linear-gradient(90deg, #30a8ff , #eb0000);
+}
+#card-3{
+    background: linear-gradient(90deg, #eb0000 , #320707);
+}
+#card-b-1{
+    background: linear-gradient(120deg,#030609 , #30a8ff );
+}
+#card-b-2{
+    background: linear-gradient(240deg, #eb0000 ,#30a8ff);
+}
+#card-b-3{
+    background: linear-gradient(360deg, #eb0000 , #320707);
+}
